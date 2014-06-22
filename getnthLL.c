@@ -60,6 +60,7 @@ int getnth(struct node** headref, int key){
 		n = n->next;
 		count++;
 	}
+	
 	return n->data;
 }
 
@@ -68,7 +69,7 @@ int main(){
 	struct node* second = NULL;
 	struct node* third = NULL;
 	struct node* newnode = NULL;
-	int key, ch, ch1;
+	int key, ch, ch1, ans;
 
 	head = (struct node*)malloc(sizeof(struct node));
 	second = (struct node*)malloc(sizeof(struct node));
@@ -113,7 +114,9 @@ int main(){
 					printf("\nEnter Index for nth element::");
 					scanf("%d",&key);
 
-					printf("Nth element = ",getnth(&head,key));
+					ans = getnth(&head,key);
+					printf("Nth element = %d ",ans);
+					
 					continue;	    	
 
 					case 4: 	ch1 = 1;
@@ -123,3 +126,4 @@ int main(){
 	getchar();
 	return 0;
 }
+
